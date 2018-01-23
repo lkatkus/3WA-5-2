@@ -108,10 +108,6 @@
 
         let x = containerCenter - (imgLeft + imgWidth - containerOffset);
 
-        if(x < 0){
-            x = -x;
-        }
-
         console.log("CONTAINER OFFSET " + containerOffset);
         console.log("IMG LEFT " + imgLeft);
         console.log("X " + x);

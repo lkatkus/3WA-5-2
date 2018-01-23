@@ -8,6 +8,9 @@ html, body{
 }
 
 #carousel{
+
+    overflow: hidden;
+
     background: rgba(242,246,248,1);
     background: -moz-linear-gradient(left, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, rgba(242,246,248,1)), color-stop(50%, rgba(216,225,231,1)), color-stop(51%, rgba(181,198,208,1)), color-stop(100%, rgba(224,239,249,1)));
@@ -16,6 +19,18 @@ html, body{
     background: -ms-linear-gradient(left, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%);
 }
 
+#carousel-container{
+    padding: 10px;
+    position: relative;
+    transition: all ease 0.5s;
+    background-color: rgba(150,150,150,0.5);
+    white-space: nowrap;
+}
+
+.carousel-item{
+    display: inline-block;
+
+}
 
 #carousel-buttons ul{
     padding: 0;
@@ -36,22 +51,10 @@ html, body{
     display: none;
 }
 
-#carousel-container{
-    padding: 10px;
-    display: inline-block;
-    position: relative;
-    transition: all ease 0.5s;
-    background-color: rgba(150,150,150,0.5);
-}
-
-.carousel-item{
-    display: inline-block;
-    top: 0;
-}
 
 .carousel-item img{
     padding: 10px;
-    width: 200px;
+    height: 400px;
 }
 
 .carousel-item.active img{
