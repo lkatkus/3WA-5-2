@@ -1,0 +1,39 @@
+body{
+    width: 800px;
+}
+
+#carousel{
+    background-color: blue;
+}
+
+#carousel-buttons{
+    background-color: red;
+}
+
+#carousel-buttons ul li{
+    list-style: none;
+    display: inline-block;
+}
+
+#carousel-container{
+
+    background-color: green;
+    white-space: nowrap;
+    overflow: scroll;
+}
+
+.carousel-item{
+    display: inline-block;
+}
+
+.carousel-item{
+    width: 100%;
+
+
+}
+
+img{
+    margin: 0 auto;
+    display: block;
+
+}
