@@ -1,39 +1,92 @@
+
+*{
+    box-sizing: border-box;
+}
+
 body{
-    width: 800px;
+    background-color: grey;
 }
 
 #carousel{
     background-color: blue;
+    width: 80%;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
 }
 
-#carousel-buttons{
-    background-color: red;
+#carousel-viewport{
+    background-color: pink;
+    padding: 10px;
+    width: 100%;
+    overflow: hidden;
 }
 
-#carousel-buttons ul li{
+#carousel-item-container{
+    background-color: orange;
+    white-space: nowrap;
+    position: relative;
+    transition: all 1s;
+}
+
+#carousel-buttons-container{
+    background-color: grey;
+    text-align: center;
+    padding: 10px;
+}
+
+#carousel-buttons-container ul{
+    padding: 0;
+    margin: 0;
+}
+
+#carousel-buttons-container ul li{
     list-style: none;
     display: inline-block;
-}
-
-#carousel-container{
-
-    background-color: green;
-    white-space: nowrap;
-    overflow: scroll;
-}
-
-.carousel-item{
-    display: inline-block;
+    background-color: firebrick;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    user-select: none;
 }
 
 .carousel-item{
-    width: 100%;
-
-
+  background-color: lime;
+  width: 100%;
+  display: inline-block;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
 }
 
 img{
-    margin: 0 auto;
-    display: block;
+    width: 100%;
+    /* height: 100%; */
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
 
+.imgLandscape{
+    width: 100%;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.imgPortrait{
+    height: 100%;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+
+.active{
+    background-color: red;
+}
+
+.d-none{
+    display: none;
 }
