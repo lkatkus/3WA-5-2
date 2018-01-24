@@ -106,15 +106,28 @@ function center(active){
 }
 
 function checkAspectRation(){
+
     // VIEWPORT ASPECT RATIO
-    console.log(((carouselContainer.getBoundingClientRect()).width) / ((carouselContainer.getBoundingClientRect()).height));
+    let viewportAspect = ((carouselContainer.getBoundingClientRect()).width) / ((carouselContainer.getBoundingClientRect()).height);
 
     // IMAGE ASPECT RATIO
         // GET ACTIVE IMAGE
-        console.log(document.querySelector(".carousel-item.active > img"));
+        let activeImg = document.querySelector(".carousel-item.active > img");
 
+        // GET IMAGE ASPECT RATIO
+        let imgAspect = ((activeImg.getBoundingClientRect()).width) / ((activeImg.getBoundingClientRect()).height);
 
-    // console.log(((carouselContainer.getBoundingClientRect()).width) / ((carouselContainer.getBoundingClientRect()).height));
+    // APPLY PORTRAIT OR LANDSCAPE MODE
+    if(imgAspect > viewportAspect){
+        console.log("HEIGHT");
+        activeImg.classList.remove("imgLandscape");
+        activeImg.classList.add("imgPortrait");
+    }else{
+        console.log("WIDTH");
+        activeImg.classList.remove("imgPortrait");
+        activeImg.classList.add("imgLandscape");
+    }
+
 }
 
 // GLOBAL LISTENER
