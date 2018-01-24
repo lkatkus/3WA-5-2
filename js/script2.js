@@ -1,3 +1,6 @@
+function startCarousel(){
+    console.log("starting carousel");
+
 // CAROUSEL SELECTOR
 var carousel = document.getElementById("carousel");
 var carouselViewport = document.getElementById("carousel-viewport");
@@ -12,11 +15,13 @@ var btnRandom = document.getElementById("slider-random");
 var itemCurrentActive = 0;
 var itemNextActive = 0;
 
+
 // BUTTON EVENT LISTENER
 btnToggle.addEventListener("click", toggle);
 btnPrevious.addEventListener("click", previous);
 btnNext.addEventListener("click", next);
 btnRandom.addEventListener("click", random);
+
 
 function toggle(){
     let x = carousel.querySelector("#carousel-viewport");
@@ -45,6 +50,7 @@ function previous(){
     // APPLY CLASS
     carouselItems[itemCurrentActive].classList.remove("active");
     carouselItems[itemNextActive].classList.add("active");
+    checkAspectRation();
 
     center(itemNextActive);
 }
@@ -71,14 +77,13 @@ function next(){
     // APPLY CLASS
     carouselItems[itemCurrentActive].classList.remove("active");
     carouselItems[itemNextActive].classList.add("active");
+    checkAspectRation();
 
     console.log(itemNextActive);
     center(itemNextActive);
 }
 
 function random(){
-
-
     // GET ELEMENTS IN CONTAINER
     let carouselItems = carouselContainer.querySelectorAll(".carousel-item");
 
@@ -106,7 +111,6 @@ function center(active){
 }
 
 function checkAspectRation(){
-
     // VIEWPORT ASPECT RATIO
     let viewportAspect = ((carouselContainer.getBoundingClientRect()).width) / ((carouselContainer.getBoundingClientRect()).height);
 
@@ -135,3 +139,7 @@ window.addEventListener('resize', function(){
     center(itemNextActive);
     checkAspectRation();
 });
+
+checkAspectRation();
+
+}
